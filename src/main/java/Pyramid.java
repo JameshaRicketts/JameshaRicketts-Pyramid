@@ -20,14 +20,21 @@ public class Pyramid {
      * The newline character can be written as \n .
      * The tests will not be affected by a newline character at the beginning or end of the entire pyramid.
      *
-     * Here's a hint: you could use a for loop inside of a for loop for this problem. The outer for loop
-     * can determine the current 'row', and the inner for loop can print an asterisk an amount of times based on the
-     * current 'row'.
      *
      * @param n the size of the pyramid.
      * @return a string representation of the pyramid.
      */
     public String returnPyramid(int n){
-        return "";
+        String pyramidString = "";
+        for (int outer = 1; outer <= n; outer++){
+            for (int inner = 1; inner <= outer; inner++){
+                pyramidString+="*";
+                if (inner == outer) {
+                    pyramidString+= '\n';
+                }
+            }
+        }
+
+        return pyramidString;
     }
 }
